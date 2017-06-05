@@ -19,7 +19,8 @@ public class EmployeeService {
     }
     
     public Employee authenticate(String email, String password){
-        return employeeRepository.findOne(hasEmail(email).and(hasPassword(password)));
+        return employeeRepository.findByEmailAndPassword(email, password);
+        //return employeeRepository.findOne(hasEmail(email).and(hasPassword(password)));
     }
     
     public Employee findOne(Long id){
